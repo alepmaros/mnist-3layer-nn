@@ -11781,9 +11781,11 @@ div#notebook {
 <p>O objetivo é testar uma rede de 3 camadas (1 camada de entrada, 1 camada oculta e 1 camada de saída), com diferentes configurações de hiperparâmetros, para resolver o problema de reconhecer dígitos escritos a mão (como no exemplo do dataset <em>mnist</em>)</p>
 <p>A entrada da rede são 784 píxeis que corresponde a uma imagem de 28x28 referente ao dígito escrito. Cada píxel pode variar seu valor de 0 à 255, onde 0 é o píxel completamente preto e 255 o píxel branco.</p>
 <p>A saída da rede é um vetor de 10 posições, onde cada posição $i$ (0 a 9) é a probabilidade de ser o dígito $i$. Para isso utiliza-se a função de <em>cross-entropy</em>.</p>
-<p>A função de perda a ser minimizada é a seguinte</p>
+<p>A função de perda a ser minimizada é a de cross-entropy, que é a seguinte</p>
 <p><img src="loss.jpg" alt="image.png"></p>
-<p>Este trabalho foi desenvolvido com a ajuda da bilbioteca <em>scikit-learn</em>, <em>pandas</em>, <em>matplotlib</em> e <em>numpy</em>.</p>
+<p>onde $m$ é a quantidade de entradas no treino, $K$ é o número de saídas possíveis e $y_k^{(i)}$ representa a saída correta de cada classe $k$ em cada entrada $i$ e similarmente $(h_{\theta}(x^{(i)}))_k$ representa a saída dada pela rede. Nesse caso, $K = 10$ (10 possíveis digitos que podem ser previstos) e $m = 5000$ (para o caso em que não foi usada nenhuma técnica de validação).</p>
+<p>No <em>scikit-learn</em>, a única função de perda que o MLP (Multi-Layer Perceptron) aceita é a função de <em>cross-entropy</em>. Existem diversos nomes para essa função de perda, na documentação do scikit-learn essa função é chamada de <em>log loss</em>, na documentação do Keras essa função é chamada de categorical_crossentropy, etc. Aqui ela será referida como log loss (e em alguns casos, neg log loss que é a variação negativa dessa função para desenhar a curva da pontuação do modelo).</p>
+<p>Este trabalho foi desenvolvido com a ajuda da bilbioteca <em>scikit-learn</em>, <em>pandas</em>, <em>matplotlib</em> e <em>numpy</em>. Caso for executar, é aconselhável utilizar um virtualenv. Dentro da pasta do projeto está um arquivo "requirements.txt" que contém todas as dependências para facilitar a instalação.</p>
 <p><strong>Aviso</strong>: A execução total desse <em>notebook</em> é demorada! É incluido um .html pré-calculado junto com o .ipynb</p>
 
 </div>
