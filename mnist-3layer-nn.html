@@ -12354,7 +12354,7 @@ Name: label, dtype: float64</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[5]:</div>
+<div class="prompt input_prompt">In&nbsp;[3]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">scaler</span> <span class="o">=</span> <span class="n">StandardScaler</span><span class="p">()</span>
@@ -12382,11 +12382,11 @@ Name: label, dtype: float64</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[6]:</div>
+<div class="prompt input_prompt">In&nbsp;[4]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">plot_learning_curve</span><span class="p">(</span><span class="n">estimator</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Default Title&quot;</span><span class="p">,</span> <span class="n">ylim</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">cv</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
-                        <span class="n">n_jobs</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">train_sizes</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">.</span><span class="mi">1</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="mi">10</span><span class="p">)):</span>
+                        <span class="n">n_jobs</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">train_sizes</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">.</span><span class="mi">1</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="mi">10</span><span class="p">),</span> <span class="n">scoring</span><span class="o">=</span><span class="s1">&#39;neg_log_loss&#39;</span><span class="p">):</span>
     
     <span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">13</span><span class="p">,</span> <span class="mi">6</span><span class="p">),</span> <span class="n">dpi</span><span class="o">=</span> <span class="mi">80</span><span class="p">)</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">use</span><span class="p">(</span><span class="s1">&#39;ggplot&#39;</span><span class="p">)</span>
@@ -12398,7 +12398,7 @@ Name: label, dtype: float64</pre>
     <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Pontuação&quot;</span><span class="p">)</span>
     
     <span class="n">train_sizes</span><span class="p">,</span> <span class="n">train_scores</span><span class="p">,</span> <span class="n">test_scores</span> <span class="o">=</span> <span class="n">learning_curve</span><span class="p">(</span><span class="n">estimator</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span>
-        <span class="n">cv</span><span class="o">=</span><span class="n">cv</span><span class="p">,</span> <span class="n">n_jobs</span><span class="o">=</span><span class="n">n_jobs</span><span class="p">,</span> <span class="n">train_sizes</span><span class="o">=</span><span class="n">train_sizes</span><span class="p">,</span> <span class="n">scoring</span><span class="o">=</span><span class="s1">&#39;neg_log_loss&#39;</span><span class="p">)</span>
+        <span class="n">cv</span><span class="o">=</span><span class="n">cv</span><span class="p">,</span> <span class="n">n_jobs</span><span class="o">=</span><span class="n">n_jobs</span><span class="p">,</span> <span class="n">train_sizes</span><span class="o">=</span><span class="n">train_sizes</span><span class="p">,</span> <span class="n">scoring</span><span class="o">=</span><span class="n">scoring</span><span class="p">)</span>
     <span class="n">train_scores_mean</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">train_scores</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
     <span class="n">train_scores_std</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">train_scores</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
     <span class="n">test_scores_mean</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">test_scores</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
@@ -13839,7 +13839,72 @@ Name: label, dtype: float64</pre>
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="4.-Conclus&#245;es">4. Conclus&#245;es<a class="anchor-link" href="#4.-Conclus&#245;es">&#182;</a></h2><p>Este trabalho estudou o comportamento de uma rede de percepetrons de múltiplas camadas (mais especificando utilizando 3 camadas: 1 de entrada, 1 oculta e 1 de saída) aplicado ao problema de reconhecer dígitos escritos manualmente, onde os mesmos estão dispostos em uma imagem de 28 por 28 píxels.</p>
+<h1 id="4.-Verificando-taxa-de-acerto-do-modelo-com-accuracy_score-(levando-em-considera&#231;&#227;o-somente-o-d&#237;gito-com-maior-probabildiade)">4. Verificando taxa de acerto do modelo com accuracy_score (levando em considera&#231;&#227;o somente o d&#237;gito com maior probabildiade)<a class="anchor-link" href="#4.-Verificando-taxa-de-acerto-do-modelo-com-accuracy_score-(levando-em-considera&#231;&#227;o-somente-o-d&#237;gito-com-maior-probabildiade)">&#182;</a></h1><p>Como a função de log_loss é um pouco mais dificil de se interpretar, será realizado um exemplo em que utilizaremos a validação com a função accuracy_score. Essa função irá assumir como resposta o dígito que tem a maior probabilidade de ser o dígito correto. Se a matriz de probabilidades é [0.1, 0.9, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], o dígito que a função irá considerar é 1. Dessa forma, poderemos ter uma noção mais tangível de quantos % o modelo acertou/errou.</p>
+<p>Para isso, usaremos o modelo com 50 perceptrons na camada oculta, mini-batch sgd com 50 exemplos e learning rate de 0.01. A função de perda ainda será a de cross-entropy, mas validaremos o modelo utilizando accuracy_score.</p>
+<p>Também separaremos a entrada em teste e treino, sendo que a entrada de treino terá 4500 exemplos e a de teste 500.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[6]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="k">import</span> <span class="n">train_test_split</span>
+<span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="k">import</span> <span class="n">accuracy_score</span>
+
+<span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">test_size</span><span class="o">=</span><span class="mf">0.10</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">)</span>
+
+<span class="n">clf</span> <span class="o">=</span> <span class="n">MLPClassifier</span><span class="p">(</span><span class="n">solver</span><span class="o">=</span><span class="s1">&#39;sgd&#39;</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="s1">&#39;logistic&#39;</span><span class="p">,</span> <span class="n">batch_size</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span> <span class="n">early_stopping</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+                    <span class="n">hidden_layer_sizes</span><span class="o">=</span><span class="p">(</span><span class="mi">50</span><span class="p">,),</span> <span class="n">learning_rate_init</span><span class="o">=</span><span class="mf">0.01</span><span class="p">,</span> <span class="n">max_iter</span><span class="o">=</span><span class="mi">400</span><span class="p">,</span> <span class="n">momentum</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span>
+                    <span class="n">shuffle</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">tol</span><span class="o">=</span><span class="mf">1e-4</span><span class="p">)</span>
+
+<span class="n">clf_trained</span> <span class="o">=</span> <span class="n">clf</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+
+<span class="n">y_pred</span> <span class="o">=</span> <span class="n">clf_trained</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
+<span class="n">score</span>  <span class="o">=</span> <span class="n">accuracy_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Taxa de acerto: &#39;</span><span class="p">,</span> <span class="n">score</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Taxa de acerto:  0.91
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Como podemos ver, a taxa de acerto com o modelo com 50 perceptrons na camada oculta, mini-batch sgd com 50 exemplos e learning rate de 0.01 para o caso de teste onde foram usadas 4500 exemplo de treinamento é de $91\%$, uma boa porcentagem de acerto mas não a melhor segundo a literatura existente.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="5.-Conclus&#245;es">5. Conclus&#245;es<a class="anchor-link" href="#5.-Conclus&#245;es">&#182;</a></h2><p>Este trabalho estudou o comportamento de uma rede de percepetrons de múltiplas camadas (mais especificando utilizando 3 camadas: 1 de entrada, 1 oculta e 1 de saída) aplicado ao problema de reconhecer dígitos escritos manualmente, onde os mesmos estão dispostos em uma imagem de 28 por 28 píxels.</p>
 <p>Para o estudo dessa rede, foi testado diferentes combinações de hiperparâmetros:</p>
 <ol>
 <li>Variação da quantidade de perceptrons na camada oculta (25, 50 e 100);</li>
@@ -13855,6 +13920,7 @@ Name: label, dtype: float64</pre>
 </ul>
 <p>Além disso, a variação do número de camadas em cada um desses algoritmos não se mostrou ser diferente das conclusões obtidas no primeiro caso, onde o algoritmo de gradiente se mateve fixo. A mesma conclusão foi encontrada com a variação do número de camadas nos exemplos acima.</p>
 <p><strong>Para o terceiro, e último caso</strong>, referente a variação da taxa de aprendizado dos modelos, foi identificado que as três primeiras propostas de taxa de aprendizado da documentação (0.5, 1 e 10) eram todas elevadas e rapidamente caíam em <em>overfit</em>, sendo que no caso com learning rate mais elevado (em 10) o modelo ainda era extremamente instável, muitas vezes aumentando seu erro de uma iteração para outra. Para isso, foi então sugerido um novo <em>learning rate</em> de 0.01, que, embora exigiu mais iterações para convergir, se mostrou muito mais eficaz no cálculo do modelo e as curvas de aprendizagem seguiram um comportamento previsível, diferente dos outros casos.</p>
+<p>Por fim, foi verificado a taxa de acerto para o melhor modelo identificado na validação cruzada (50 perceptrons na camada oculta, mini-batch sgd com 50 exemplos e learning rate de 0.01) e foi calculado a taxa de acerto do modelo levando em consideração somente o dígito que possuía a maior probablidade. Para esse caso, foi então verificado que a taxa de acerto para esse modelo foi de $91\%$.</p>
 
 </div>
 </div>
